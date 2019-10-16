@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title: 梦在不远处
+subtitle: 博客
+description: 一个前端路上飞很久了的菜鸟
 keywords:
-author: John Doe
+author: 宣卓
 language: zh-CN
 timezone:
 
@@ -81,21 +81,3 @@ deploy:
   type: git
   repo: https://github.com/xuanzhuo/blog.git
   branch: gh-pages
-
-# live2d
-live2d:
-  enable: true
-  scriptFrom: local
-  pluginRootPath: live2dw/
-  pluginJsPath: lib/
-  pluginModelPath: assets/
-  tagMode: false
-  log: false
-  model:
-    use: live2d-widget-model-shizuku
-  display:
-    position: right
-    width: 150
-    height: 300
-  mobile:
-    show: true
