@@ -29,13 +29,35 @@ git clone --branch v6.7.0 https://github.com/theme-next/hexo-theme-next themes/n
 
 ## 应用主题
 
-更改配置文件
+更改站点配置文件
 
 ```yml
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next（此处改为next，默认landscape）
+```
+
+
+
+## 菜单设置
+
+### 搜索设置
+
+安装依赖
+
+```bash
+npm i hexo-generator-searchdb
+```
+
+更改站点配置文件，添加以下内容
+
+```yml
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
 ```
 
 

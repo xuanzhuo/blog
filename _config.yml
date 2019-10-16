@@ -81,3 +81,10 @@ deploy:
   type: git
   repo: https://github.com/xuanzhuo/blog.git
   branch: gh-pages
+
+#search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
