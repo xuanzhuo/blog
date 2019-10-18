@@ -105,7 +105,7 @@ npm i hexo-symbols-count-time
 
 安装完成无需配置即可生效（不生效重启hexo项目）
 
-## 添加宠物
+## 添加看板娘
 
 安装依赖
 
