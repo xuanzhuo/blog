@@ -7,21 +7,44 @@ categories: git
 
 ## 前言
 
-​	此篇主要收集了一些git常用命令，方便查阅，参阅了廖雪峰老师的[git教程]( https://www.liaoxuefeng.com/wiki/896043488029600 )
+此篇主要收集了一些git常用命令，方便查阅，参阅了廖雪峰老师的[git教程]( https://www.liaoxuefeng.com/wiki/896043488029600 )
 
 
 
-## 创建版本库
+## 创建仓库
 
- `git init`命令使目录变成Git可以管理的仓库 
+ `git init` 命令使目录变成Git可以管理的仓库 
 
 ```bash
+#当前目录初始化为一个git仓库
 git init
+#当前目录下新建project-name目录，并将其初始化为git仓库
+git init [project-name]
 ```
+
+## 添加
+
+`git add` 命令把工作区文件添加到暂存区
+
+```bash
+#添加单个文件
+git add [file]
+#添加多个文件(文件之间用空格分隔)
+git add [file1] [file2]
+#添加文件夹(包括子文件夹)
+git add [dir]
+
+
+
+```
+
+
+
+
 
 ## 中文乱码
 
-windows
+windows下的设置
 
 ```
 git config --global core.quotepath false          # 显示 status 编码
