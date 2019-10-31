@@ -1,11 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>git 常用命令</title>
-    <url>/blog/2019/10/16/git-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    此篇主要收集了一些git常用命令，方便查阅，参阅了廖雪峰老师的<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">git教程</a></p>
-<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><p> <code>git init</code>命令使目录变成Git可以管理的仓库 </p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+    <title>元素坐标之实战(5)</title>
+    <url>/blog/2019/10/18/js/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87%E4%B9%8B%E5%AE%9E%E6%88%98-5/</url>
+    <content><![CDATA[<h3 id="实战之拖动改变元素宽高"><a href="#实战之拖动改变元素宽高" class="headerlink" title="实战之拖动改变元素宽高"></a>实战之拖动改变元素宽高</h3><p>测试demo：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/resizable.html">resizable.html</a> <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/resizable.html" target="_blank" rel="noopener">代码地址</a></p>
+<p>插件封装：<a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/scripts/resizable.js" target="_blank" rel="noopener">resizable.js</a></p>
+<h3 id="实战之元素的拖放"><a href="#实战之元素的拖放" class="headerlink" title="实战之元素的拖放"></a>实战之元素的拖放</h3><p>测试demo：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/draggable.html">draggable.html</a> <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/draggable.html" target="_blank" rel="noopener">代码地址</a></p>
+<p>插件封装：<a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/scripts/draggable.js" target="_blank" rel="noopener">draggable.js</a></p>
+<h3 id="元素可拖放且可调宽高"><a href="#元素可拖放且可调宽高" class="headerlink" title="元素可拖放且可调宽高"></a>元素可拖放且可调宽高</h3><p>测试demo：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/draggableAndResizable.html">draggableAndResizable.html </a> <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/draggableAndResizable.html" target="_blank" rel="noopener">代码地址</a></p>
+<h3 id="元素拖放逻辑抽取"><a href="#元素拖放逻辑抽取" class="headerlink" title="元素拖放逻辑抽取"></a>元素拖放逻辑抽取</h3><p>测试demo(打开控制台)：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/drag.html">drag.html</a> <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/drag.html" target="_blank" rel="noopener">代码地址</a></p>
+<p>插件封装：<a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/scripts/drag.js" target="_blank" rel="noopener">drag.js</a></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>元素坐标(兼容性ie9+、火狐26+)</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>元素坐标之获取元素的坐标(4)</title>
+    <url>/blog/2019/10/18/js/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87%E4%B9%8B%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%9A%84%E5%9D%90%E6%A0%87-4/</url>
+    <content><![CDATA[<h2 id="getBoundingClientRect"><a href="#getBoundingClientRect" class="headerlink" title="getBoundingClientRect()"></a><strong>getBoundingClientRect()</strong></h2><p> 方法返回元素的大小及其相对于视口的位置</p>
+<p><strong>语法</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> DOMRect = el.getBoundingClientRect() <span class="comment">// 返回值是一个DOMRect对象 </span></span><br><span class="line"></span><br><span class="line">DOMRect</span><br><span class="line"><span class="comment">//该对象最初只有 top、left、right、bottom 属性，后来添加了 width、height、x、y 属性。</span></span><br><span class="line"><span class="comment">//所有属性皆为只读属性</span></span><br><span class="line"><span class="comment">//属性值可为负数（有滚动时），可为小数</span></span><br><span class="line">DOMRect.left   <span class="comment">//元素盒子矩形左侧到视口原点的距离（有滚动时，相对文档距离应加上滚动距离pageXOffset）</span></span><br><span class="line">DOMRect.right  <span class="comment">//元素盒子矩形右侧到视口原点的距离</span></span><br><span class="line">DOMRect.width  <span class="comment">//元素盒子矩形的宽度（相当right-left）</span></span><br><span class="line"></span><br><span class="line">DOMRect.top    <span class="comment">//元素盒子矩形顶部到视口原点的距离（有滚动时，相对文档距离应加上滚动距离pageYOffset）</span></span><br><span class="line">DOMRect.bottom <span class="comment">//元素盒子矩形底部到视口原点的距离</span></span><br><span class="line">DOMRect.height <span class="comment">//元素盒子矩形的高度（相当bottom-top）</span></span><br><span class="line"></span><br><span class="line">DOMRect.x/y <span class="comment">//火狐26，ie9不兼容，undefined</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="offsetLeft-offsetTop"><a href="#offsetLeft-offsetTop" class="headerlink" title="offsetLeft/offsetTop"></a>offsetLeft/offsetTop</h2><p> 只读属性 </p>
+<p> 返回当前元素<em>左上角</em>相对于  <code>HTMLElement.offsetParent</code> 节点的边界偏移的距离(单位像素)。 </p>
+<p><strong>语法</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> l = el.offsetLeft; <span class="comment">//是一个整数，表示向左偏移的距离(单位像素)。</span></span><br><span class="line"><span class="keyword">var</span> t = el.offsetTop;  <span class="comment">//是一个整数，表示向上偏移的距离(单位像素)。</span></span><br></pre></td></tr></table></figure>
+
+<p>利用<code>offsetLeft/offsetTop/offsetParent</code>实现一个简单的获取元素绝对位置（相对文档边缘）的方法</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFixedCoor</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> left = el.offsetLeft;</span><br><span class="line">	<span class="keyword">var</span> top = el.offsetTop;</span><br><span class="line">	<span class="keyword">while</span>((el = el.offsetParent))&#123;</span><br><span class="line">		left += el.offsetLeft;</span><br><span class="line">		top += el.offsetTop;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> &#123;</span><br><span class="line">		left:left,</span><br><span class="line">		top:top</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>测试：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/element-rect.html">测试demo</a>  <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/element-rect.html" target="_blank" rel="noopener">测试代码</a></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>元素坐标(兼容性ie9+、火狐26+)</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>元素坐标之鼠标事件对象pageX,clientX,screenX(3)</title>
+    <url>/blog/2019/10/18/js/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87%E4%B9%8B%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1pageX-clientX-screenX-3/</url>
+    <content><![CDATA[<h2 id="screenX"><a href="#screenX" class="headerlink" title="screenX"></a>screenX</h2><p>只读属性</p>
+<p>返回的相对于屏幕（以屏幕左上角为原点）的水平（x）坐标，单位像素</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> screenX = event.screenX</span><br></pre></td></tr></table></figure>
+
+<h2 id="screenY"><a href="#screenY" class="headerlink" title="screenY"></a>screenY</h2><p>只读属性</p>
+<p>返回的相对于屏幕（以屏幕左上角为原点）的垂直（y）坐标，单位像素</p>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> screenY = event.screenY</span><br></pre></td></tr></table></figure>
+
+<h2 id="clientX"><a href="#clientX" class="headerlink" title="clientX"></a>clientX</h2><p>只读属性</p>
+<p>返回的相对于浏览器视口（以浏览器视口左上角为原点）的水平（x）坐标，单位像素</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clientX = event.clientX</span><br></pre></td></tr></table></figure>
+
+<h2 id="clientY"><a href="#clientY" class="headerlink" title="clientY"></a>clientY</h2><p>只读属性</p>
+<p>返回的相对于浏览器视口（以浏览器视口左上角为原点）的垂直（y）坐标，单位像素</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> clientY = event.clientY</span><br></pre></td></tr></table></figure>
+
+<h2 id="pageX"><a href="#pageX" class="headerlink" title="pageX"></a>pageX</h2><p>只读属性</p>
+<p>返回的相对于整个文档（以文档左上角为原点）的水平（x）坐标，单位像素</p>
+<p>考虑任何页面的水平方向上的滚动  </p>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pageX = event.pageX</span><br></pre></td></tr></table></figure>
+
+<h2 id="pageY"><a href="#pageY" class="headerlink" title="pageY"></a>pageY</h2><p>只读属性</p>
+<p>返回的相对于整个文档（以文档左上角为原点）的垂直（y）坐标，单位像素</p>
+<p>考虑任何页面的水平方向上的滚动  </p>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> pageY = event.pageY</span><br></pre></td></tr></table></figure>
+
+<h2 id="文字不直观，来张图"><a href="#文字不直观，来张图" class="headerlink" title="文字不直观，来张图"></a>文字不直观，来张图</h2><img src="/blog/2019/10/18/js/元素坐标/元素坐标之鼠标事件对象pageX-clientX-screenX-3/鼠标事件对象坐标属性.png" title="鼠标事件对象坐标属性">
+
+<p>测试：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/event-about.html">测试demo</a> <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/event-about.html" target="_blank" rel="noopener">测试代码</a></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>元素坐标(兼容性ie9+、火狐26+)</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>元素坐标之显示区域的宽高(2)</title>
+    <url>/blog/2019/10/18/js/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87%E4%B9%8B%E6%98%BE%E7%A4%BA%E5%8C%BA%E5%9F%9F%E7%9A%84%E5%AE%BD%E9%AB%98-2/</url>
+    <content><![CDATA[<h2 id="屏幕"><a href="#屏幕" class="headerlink" title="屏幕"></a>屏幕</h2><h3 id="Screen-（window-screen）"><a href="#Screen-（window-screen）" class="headerlink" title="Screen （window.screen）"></a>Screen （window.screen）</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var w = Screen.width #屏幕分辨率的宽</span><br><span class="line">var h = Screen.height #屏幕分辨率的高</span><br><span class="line">var w = Screen.availWidth #浏览器窗口可占用的宽度（屏幕分辨率的宽-桌面任务栏（如果任务栏垂直显示））</span><br><span class="line">var h = Screen.availHeight #浏览器窗口可占用的高度（屏幕分辨率的高-桌面任务栏（如果任务栏水平显示））</span><br></pre></td></tr></table></figure>
+
+<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><h3 id="window"><a href="#window" class="headerlink" title="window"></a>window</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var w = window.innerWidth  #浏览器视口宽度</span><br><span class="line">var h = window.innerHeight #浏览器视口高度</span><br><span class="line">var w = window.outerWidth  #浏览器窗口(外边框以内)的宽度</span><br><span class="line">var h = window.outerHeight #浏览器窗口(外边框以内)的高度</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><h3 id="document"><a href="#document" class="headerlink" title="document"></a>document</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var w = document.documentElement.clientWidth  #与浏览器视口宽度相等</span><br><span class="line">var h = document.documentElement.clientHeight #与浏览器视口高度相等</span><br><span class="line">var w = document.body.clientWidth  #与浏览器视口宽度相等</span><br><span class="line">var h = document.body.clientHeight #与浏览器视口高度相等</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><code>screen</code>和<code>window</code>的宽高属性都为其特有的，要与上篇的元素的宽高(width/height)[client/offset/scroll]属性区分开</li>
+<li><code>screen</code>的值与屏幕分辨率相关，不切换屏幕分辨率，值不变</li>
+<li>对于浏览器来说，一般取值指的是视口的宽高值:<ul>
+<li><code>window.innerWidth</code>（推荐，含滚动条宽度）</li>
+<li><code>document.documentElement.clientWidth</code> （不含滚动条宽度）</li>
+</ul>
+</li>
+</ul>
+<p> 测试：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/display-area.html">测试demo</a>  <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/display-area.html" target="_blank" rel="noopener">测试代码</a></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>元素坐标(兼容性ie9+、火狐26+)</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>元素坐标之元素的宽高(1)</title>
+    <url>/blog/2019/10/18/js/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87/%E5%85%83%E7%B4%A0%E5%9D%90%E6%A0%87%E4%B9%8B%E5%85%83%E7%B4%A0%E7%9A%84%E5%AE%BD%E9%AB%98-1/</url>
+    <content><![CDATA[<h2 id="clientWidth"><a href="#clientWidth" class="headerlink" title="clientWidth"></a><code>clientWidth</code></h2><ul>
+<li><p>只读属性</p>
+</li>
+<li><p><code>clientWidth</code>属性表示元素的内部宽度，单位像素。</p>
+</li>
+<li><p>该属性包括内边距，但不包括垂直滚动条（如果有）、边框和外边距。</p>
+</li>
+<li><p>行内元素（不包括行内块）以及没有 CSS 样式的元素的 <code>clientWidth</code> 属性值为 0。</p>
+</li>
+<li><p><code>clientWidth</code> = <code>content</code>的<code>width</code> + <code>padding</code> - 垂直滚动条宽度（一般浏览器默认17px）（如果有）</p>
+</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var w = el.clientWidth; #w为整数值，该属性值会被四舍五入为一个整数</span><br></pre></td></tr></table></figure>
+
+<h2 id="clientHeight"><a href="#clientHeight" class="headerlink" title="clientHeight"></a><code>clientHeight</code></h2><ul>
+<li><p>只读属性</p>
+</li>
+<li><p><code>clientHeight</code>属性表示元素的内部高度,单位像素</p>
+</li>
+<li><p>该属性包含内边距，但不包括水平滚动条（如果有）、边框和外边距。</p>
+</li>
+<li><p>对于没有定义CSS或者内联布局盒子的元素<code>clientHeight</code>属性值为0</p>
+</li>
+<li><p><code>clientHeight</code>= <code>content</code>的<code>height</code> + <code>padding</code> - 水平滚动条高度（一般浏览器默认17px）（如果有）</p>
+</li>
+</ul>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var h = el.clientHeight; #h为整数值，该属性值会被四舍五入为一个整数</span><br></pre></td></tr></table></figure>
+
+<h2 id="offsetWidth"><a href="#offsetWidth" class="headerlink" title="offsetWidth"></a><code>offsetWidth</code></h2><ul>
+<li><p>只读属性</p>
+</li>
+<li><p>返回一个元素的布局宽度，单位像素</p>
+</li>
+<li><p>该属性包含元素的边框、内边距、垂直方向滚动条（如果有）</p>
+</li>
+<li><p><code>offsetWidth</code>= <code>content</code>的<code>width</code> + <code>padding</code> +<code>border</code></p>
+</li>
+</ul>
+<h3 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var w = el.offsetWidth; #w为整数值，该属性值会被四舍五入为一个整数</span><br></pre></td></tr></table></figure>
+
+<h2 id="offsetHeight"><a href="#offsetHeight" class="headerlink" title="offsetHeight"></a><code>offsetHeight</code></h2><ul>
+<li><p>只读属性</p>
+</li>
+<li><p>返回一个元素的布局高度，单位像素</p>
+</li>
+<li><p>该属性包含元素的边框、内边距、水平方向滚动条（如果有）</p>
+</li>
+<li><p>对于文档的body对象，它包括代替元素的CSS高度线性总含量高。浮动元素的向下延伸内容高度是被忽略的。 </p>
+</li>
+<li><p><code>offsetHeight</code>= <code>content</code>的<code>height</code>+ <code>padding</code> +<code>border</code></p>
+</li>
+</ul>
+<h3 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var h = el.offsetHeight; #h为整数值，该属性值会被四舍五入为一个整数</span><br></pre></td></tr></table></figure>
+
+<h2 id="scrollWidth"><a href="#scrollWidth" class="headerlink" title="scrollWidth"></a><code>scrollWidth</code></h2><ul>
+<li>只读属性</li>
+<li>元素内容宽度的一种度量，包括由于overflow溢出而在屏幕上不可见的内容 </li>
+<li>测量方式与<code>clientWidth</code>相同：它包含元素的内边距，但不包括边框，外边距或垂直滚动条（如果存在） </li>
+<li>它还可以包括伪元素的宽度，例如 <code>::before</code>或 <code>::after</code>。 </li>
+</ul>
+<h3 id="语法-4"><a href="#语法-4" class="headerlink" title="语法"></a>语法</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var w = el.scrollWidth; #w为整数值，该属性值会被四舍五入为一个整数</span><br></pre></td></tr></table></figure>
+
+<h3 id="scrollLeft"><a href="#scrollLeft" class="headerlink" title="scrollLeft"></a>scrollLeft</h3><ul>
+<li>可读可写属性</li>
+<li>表示元素滚动条到元素左边的距离 </li>
+<li><code>scrollLeft</code> 可以是任意整数，然而：<ul>
+<li>如果元素不能滚动（比如：元素没有溢出），那么<code>scrollLeft</code> 的值是0。</li>
+<li>如果给<code>scrollLeft</code> 设置的值小于0，那么<code>scrollLeft</code> 的值将变为0。</li>
+<li>如果给<code>scrollLeft</code> 设置的值大于元素内容最大宽度，那么<code>scrollLeft</code> 的值将被设为元素最大宽度。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">var sLeft = el.scrollLeft; #sLeft是一个整数，代表元素滚动条距离元素左边多少像素。</span><br><span class="line">el.scrollLeft = 10; #设置滚动条滚动了10像素</span><br></pre></td></tr></table></figure>
+
+<h2 id="scrollHeight"><a href="#scrollHeight" class="headerlink" title="scrollHeight"></a><code>scrollHeight</code></h2><ul>
+<li>只读属性</li>
+<li>元素内容高度的一种度量，包括由于overflow溢出而在屏幕上不可见的内容 </li>
+<li>测量方式与<code>clientHeight</code>相同：它包含元素的内边距，但不包括边框，外边距或水平滚动条（如果存在） </li>
+<li>它还可以包括伪元素的高度，例如 <code>::before</code>或 <code>::after</code>。</li>
+</ul>
+<h3 id="语法-5"><a href="#语法-5" class="headerlink" title="语法"></a>语法</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">var h = el.scrollHeight; #h为整数值，该属性值会被四舍五入为一个整数</span><br></pre></td></tr></table></figure>
+
+<h3 id="scrollTop"><a href="#scrollTop" class="headerlink" title="scrollTop"></a><code>scrollTop</code></h3><ul>
+<li>可读可写属性</li>
+<li>表示元素滚动条到元素顶部的距离 </li>
+<li><code>scrollTop</code> 可以是任意整数，然而：<ul>
+<li>如果元素不能滚动（比如：元素没有溢出），那么<code>scrollTop</code> 的值是0。</li>
+<li>如果给<code>scrollTop</code> 设置的值小于0，那么<code>scrollTop</code> 的值将变为0。</li>
+<li>如果给<code>scrollTop</code> 设置的值大于元素内容最大高度，那么<code>scrollTop</code> 的值将被设为元素最大高度。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">var sLeft = el.scrollLeft; #sLeft是一个整数，代表元素滚动条距离元素左边多少像素。</span><br><span class="line">el.scrollLeft = 10; #设置滚动条滚动了10像素</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>比较scroll，offset，client：</p>
+<ul>
+<li>可滚动距离大于17px时: <code>scroll</code>&gt;<code>offset</code>&gt;<code>client</code></li>
+<li>可滚动距离大于0，小于17px时: <code>offset</code>&gt;<code>scroll</code>&gt;<code>client</code></li>
+<li>可滚动距离小于等于0(无滚动时): <code>offset</code>&gt;<code>scroll</code>=<code>client</code></li>
+</ul>
+</li>
+<li><p>上面几个元素的属性是在<code>html</code>中常用的属性，兼容性IE9+，火狐26+（IE低版本也可以，但因为日常需求ie9+，及火狐26+，所以测试都以最低这两个版本为主），为了更清楚的分清他们之间的关系，下面用一张标注图来示意：</p>
+<img src="/blog/2019/10/18/js/元素坐标/元素坐标之元素的宽高-1/元素宽高示意图.png" title="元素宽高示意图">
+
+</li>
+</ul>
+<p>测试：<a href="https://xuanzhuo.github.io/blog-post-code/js/coordinate/element-about.html">测试demo</a>  <a href="https://github.com/xuanzhuo/xuanzhuo.github.io/blob/master/blog-post-code/js/coordinate/element-about.html" target="_blank" rel="noopener">测试代码</a></p>
+]]></content>
+      <categories>
+        <category>js</category>
+        <category>元素坐标(兼容性ie9+、火狐26+)</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/blog/2019/10/16/git/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>此篇主要收集了一些git常用命令，方便查阅，参阅了廖雪峰老师的<a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">git教程</a></p>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><p> <code>git init</code> 命令使目录变成Git可以管理的仓库 </p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#当前目录初始化为一个git仓库</span></span><br><span class="line">git init</span><br><span class="line"><span class="comment">#当前目录下新建project-name目录，并将其初始化为git仓库</span></span><br><span class="line">git init [project-name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><p><code>git add</code> 命令把工作区文件添加到暂存区</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#添加单个文件</span></span><br><span class="line">git add [file]</span><br><span class="line"><span class="comment">#添加多个文件(文件之间用空格分隔)</span></span><br><span class="line">git add [file1] [file2]</span><br><span class="line"><span class="comment">#添加文件夹(包括子文件夹)</span></span><br><span class="line">git add [dir]</span><br></pre></td></tr></table></figure>
+
+<h2 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h2><p>windows下的设置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global core.quotepath false          # 显示 status 编码</span><br><span class="line">git config --global gui.encoding utf-8            # 图形界面编码</span><br><span class="line">git config --global i18n.commit.encoding utf-8    # 提交信息编码</span><br><span class="line">git config --global i18n.logoutputencoding utf-8  # 输出 log 编码</span><br><span class="line">set LESSCHARSET=utf-8 #最后一条命令是因为 git log 默认使用 less 分页，所以需要 bash 对 less 命令进行 utf-8 编码</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -17,7 +258,7 @@
   </entry>
   <entry>
     <title>next常见优化设置</title>
-    <url>/blog/2019/10/15/next%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
+    <url>/blog/2019/10/15/hexo/next%E5%B8%B8%E8%A7%81%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="Next主题下载"><a href="#Next主题下载" class="headerlink" title="Next主题下载"></a>Next主题下载</h2><p>进入hexo项目根目录</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd projectName</span><br></pre></td></tr></table></figure>
 
